@@ -9,14 +9,14 @@ class AppState extends EventEmitter {
   values = []
   socketData = []
 
-  /** @type {import('./Models/Car').Car[]} */
-  cars = []
+    /** @type {import('./Models/Car').Car[]} */
+    cars = []
 
-  /** @type {import('./Models/House').House[]} */
-  houses = []
+    /** @type {import('./Models/House').House[]} */
+    houses = []
 
- /** @type {import('./app/Models/Animal').Animal[]} */
- animals = []
+   /** @type {import('./Models/Animal').Animal[]} */
+   animals = []
 
  /** @type {import('./Models/Job').Job[]} */
  jobs = []

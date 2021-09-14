@@ -10,7 +10,7 @@ export class Job {
 
   get CardTemplate() {
     return /* html */`
-    <div class="item mb-4 listing rounded bg-color">
+    <div class="col-lg-3 my-3 listing rounded bg-color">
       <div class="card custom-font">
         <div class="card-body">
           <p class="d-flex justify-content-between">
@@ -18,6 +18,7 @@ export class Job {
           <p class="d-flex justify-content-between">Rate: $${this.rate} | Hours: ${this.hours}</p>
           <p>${this.description}</p>
           <button class="btn btn-color" onclick="app.jobsController.deleteJob('${this.id}')">Delete</button>
+          <button class="btn btn-info" onclick="app.jobsController.editJob('${this.id}')">Edit</button>
         </div>
       </div>
     </div>

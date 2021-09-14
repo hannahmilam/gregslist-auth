@@ -14,11 +14,19 @@ export class JobsController {
     jobsService.getJob()
   }
 
-  async deleteJob() {
+  async deleteJob(jobId) {
     try {
       await jobsService.deleteJob(jobId)
     } catch (error) {
-      alert(error.message)
+      console.log('⚠ DELETE_JOB', error)
+    }
+  }
+
+  async editJob(jobId) {
+    try {
+      await jobsService.editJob(jobId)
+    } catch (error) {
+      console.log('⚠ EDIT_JOB', error)
     }
   }
 

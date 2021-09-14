@@ -73,4 +73,12 @@ export class CarsController {
       alert(error.message)
     }
   }
+
+  async editCar(carId) {
+    try {
+      await carsService.editCar(carId)
+    } catch (error) {
+      console.log('⚠ EDIT_CAR', error)
+    }
+  }
 }

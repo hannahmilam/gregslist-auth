@@ -9,14 +9,14 @@ export class Car {
     this.mileage = carData.mileage
     this.description = carData.description
     this.price = carData.price
-    this.imgUrl = carData.imgUrl
+    this.img = carData.img
   }
 
   get CardTemplate() {
     return /* html */`
-    <div class="item col-lg-3 mb-4 listing bg-color rounded">
+    <div class="col-lg-3 my-3  listing bg-color rounded">
       <div class="card custom-font">
-        <img src="${this.imgUrl}" alt="listing image" class="rounded img-size">
+        <img src="${this.img}" alt="listing image" class="rounded img-size">
         <div class="card-body">
           <h5 class="d-flex justify-content-between">
             <span style="color: ${this.color}" >${this.make} - ${this.model}</span>
@@ -24,6 +24,7 @@ export class Car {
           </h5>
           <p>${this.description}</p>
           <button class="btn btn-color" onclick="app.carsController.deleteCar('${this.id}')">Delete</button>
+          <button class="btn btn-info" onclick="app.carsController.editCar('${this.id}')">Edit</button>
         </div>
       </div>
     </div>

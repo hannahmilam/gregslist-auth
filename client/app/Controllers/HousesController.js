@@ -23,6 +23,14 @@ export class HousesController {
     }
   }
 
+  async editHouse(houseId) {
+    try {
+      await housesService.editHouse(houseId)
+    } catch (error) {
+      console.log('⚠ EDIT_HOUSE', error)
+    }
+  }
+
   async addHouse() {
     event.preventDefault()
     /**

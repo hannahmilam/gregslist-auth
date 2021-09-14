@@ -55,5 +55,3 @@ export class AnimalsController {
     document.getElementById('animal-form').classList.toggle('visually-hidden')
   }
 }
-
-// <button class="btn btn-info custom-font" onclick="app.animalsController.toggleAnimalForm()">Add Animal</button>

@@ -1,0 +1,35 @@
+/* BASIC STYLES HERE */
+
+.custom-font{
+  font-family: 'Kaisei Tokumin', serif;
+}
+
+.bg-img{
+  background-image: url("https://images.unsplash.com/photo-1465244554671-e501f19a3bb3?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Ym9pc2V8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.bg-color{
+  background-color: rgba(255, 255, 255, 0.158);
+}
+
+.card{
+  background-color: #bae9eed7;
+}
+
+.img-size{
+  height: 150px;
+}
+
+.btn-color{
+  background-color: #e43737c7;
+  
+}
+.btn-color:hover{
+  background-color: #6567c994;; 
+}
+
+
+
+

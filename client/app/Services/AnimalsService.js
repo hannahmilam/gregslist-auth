@@ -1,10 +1,6 @@
 import { ProxyState } from '../AppState.js'
 import { Animal } from '../Models/Animal.js'
-
-// @ts-ignore
-const api = axios.create({
-  baseURL: 'http://localhost3000/api/animals'
-})
+import { api } from './AxiosService.js'
 
 class AnimalsService {
   addAnimal(animalData) {
