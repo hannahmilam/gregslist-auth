@@ -1,15 +1,30 @@
-import { Schema } from 'mongoose'
+import mongoose from 'mongoose'
+const Schema = mongoose.Schema
 
-export const Car = new Schema(
+export const CarSchema = new Schema(
   {
-    model: { type: String, required: [true, 'What is the model?'] },
-    make: { type: String, required: [true, 'Who makes it?'] },
-    price: { type: Number, required: [true, 'What price?'], min: 0 },
-    year: { type: Number, required: [true, 'Year?'] },
-    imgUrl: { type: String, default: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnMS7JvyXIjX4xQSGzcDK5TUr6NMPIvd_EQA&usqp=CAU' },
-    description: { type: Number, required: [true, 'Please Describe...'] },
-    // RELATIONSHIP
+    make: {
+      type: String,
+      required: [true, 'Who makes it?'],
+      minlength: 3,
+      // enum: ['honda', 'hyundai', 'ford', 'tesla'],
+      lowercase: true
+    },
+    model: { type: String, required: true },
+    price: { type: Number, required: true, min: 0 },
+    img: { type: String, default: 'https://proximaride.com/images/car_placeholder2.png' },
+    year: { type: Number, min: 1900, max: 3000 },
+    description: { type: String, required: true },
+
+    // RELATIONSHIP more here later
     creatorId: { type: Schema.Types.ObjectId, ref: 'Account', required: true }
   },
   { timestamps: true, toJSON: { virtuals: true } }
 )
+
+CarSchema.virtual('creator', {
+  localField: 'creatorId',
+  foreignField: '_id',
+  ref: 'Account',
+  justOne: true
+})
